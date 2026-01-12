@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>One Line Solver Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🧩 One Line Solver</h1>
+        <p class="subtitle">Upload & Selesaikan Puzzle Apapun</p>
+
+        <div id="stepUpload">
+            <div class="upload-box" onclick="document.getElementById('imageInput').click()">
+                <p>📂 Klik untuk Upload Screenshot</p>
+                <input type="file" id="imageInput" accept="image/*">
+            </div>
+        </div>
+
+        <div id="stepCrop" style="display: none;">
+            <div class="img-wrapper">
+                <img id="imageToCrop" src="">
+            </div>
+            <button id="btnCrop" class="btn btn-primary">Potong Gambar (Crop)</button>
+        </div>
+
+        <div id="stepSolve" style="display: none;">
+            
+            <div class="step-indicator" id="instructionText">
+                Tentukan jumlah kotak, lalu set Start & Finish.
+            </div>
+
+            <div class="canvas-wrapper">
+                <canvas id="resultCanvas"></canvas>
+            </div>
+
+            <div class="control-panel">
+                <div class="row">
+                    <div class="col">
+                        <label>Kolom (Samping)</label>
+                        <input type="number" id="inputCols" value="5">
+                    </div>
+                    <div class="col">
+                        <label>Baris (Bawah)</label>
+                        <input type="number" id="inputRows" value="6">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <button id="modeStart" class="btn btn-tool col active">🟢 Set Start</button>
+                <button id="modeEnd" class="btn btn-tool col">🔴 Set Finish</button>
+            </div>
+
+            <button id="btnProcess" class="btn btn-success" disabled>Selesaikan Puzzle</button>
+            <button onclick="location.reload()" class="btn" style="background:transparent; color:#888; margin-top:5px;">Ulangi dari Awal</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
